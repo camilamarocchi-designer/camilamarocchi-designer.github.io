@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Camila Marocchi — Senior Product Designer. CV and work experience."/>
+  <title>CV — Camila Marocchi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;600&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --bg:#F9F9F7;--purple:#2D0F3E;--grey:#4A4A4E;
+      --text:#1A1B1E;--text2:#4A4A4E;--muted:#7a7a7a;
+      --border:rgba(45,15,62,0.15);
+      --ff:'Open Sans',sans-serif;--ft:'Abhaya Libre',serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--ff);background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;background:rgba(249,249,247,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+    .nav-logo{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);text-decoration:none;}
+    .nav-links{display:flex;gap:2.5rem;list-style:none;}
+    .nav-links a{color:var(--text);text-decoration:none;font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;}
+    .nav-links a:hover{color:var(--purple);}
+
+    .cv-hero{padding:9rem 3rem 4rem;max-width:1100px;margin:0 auto;}
+    .back-btn{display:inline-flex;align-items:center;gap:.5rem;color:var(--grey);text-decoration:none;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3rem;transition:color .2s;}
+    .back-btn:hover{color:var(--purple);}
+    .cv-hero-eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);margin-bottom:.75rem;}
+    .cv-hero h1{font-family:var(--ft);font-weight:400;font-size:clamp(3rem,8vw,6rem);line-height:1;color:var(--purple);margin-bottom:1rem;}
+    .cv-hero-sub{font-size:1rem;color:var(--text2);max-width:620px;line-height:1.75;}
+
+    .cv-wrap{max-width:1100px;margin:0 auto;padding:0 3rem 6rem;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:5rem;align-items:start;}
+
+    /* LEFT — experience */
+    .cv-section{margin-bottom:3.5rem;}
+    .cv-sec-label{font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:1rem;}
+    .cv-sec-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+    .cv-job{margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid var(--border);}
+    .cv-job:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0;}
+    .cv-job-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.25rem;flex-wrap:wrap;}
+    .cv-job-title{font-size:1rem;font-weight:700;color:var(--text);}
+    .cv-job-period{font-size:.72rem;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;}
+    .cv-job-company{font-family:var(--ft);font-size:1.2rem;font-weight:400;color:var(--purple);margin-bottom:.2rem;}
+    .cv-job-industry{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);margin-bottom:.75rem;}
+    .cv-job-desc{font-size:.9rem;color:var(--text2);line-height:1.8;margin-bottom:.85rem;}
+    .cv-job-bullets{list-style:none;display:flex;flex-direction:column;gap:.4rem;}
+    .cv-job-bullets li{font-size:.88rem;color:var(--text2);line-height:1.7;padding-left:1.25rem;position:relative;}
+    .cv-job-bullets li::before{content:'·';position:absolute;left:0;color:var(--purple);font-size:1.1rem;top:-.05rem;}
+
+    .cv-current-badge{display:inline-block;padding:.2rem .7rem;background:rgba(45,15,62,.08);color:var(--purple);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:25px;border:1px solid rgba(45,15,62,.2);margin-left:.6rem;vertical-align:middle;}
+
+    /* RIGHT — sidebar */
+    .cv-sidebar{position:sticky;top:7rem;}
+    .cv-sidebar-block{margin-bottom:2.5rem;}
+    .cv-sidebar-label{font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);}
+
+    .cv-skills{display:flex;flex-direction:column;gap:.5rem;}
+    .cv-skill{font-size:.88rem;color:var(--text2);}
+
+    .cv-industries{display:flex;flex-direction:column;gap:.4rem;}
+    .cv-industry{display:inline-flex;padding:.3rem .8rem;border:2px solid var(--purple);color:var(--purple);font-size:.72rem;font-weight:600;border-radius:25px;width:fit-content;}
+
+    .cv-cert{display:flex;flex-direction:column;gap:.5rem;}
+    .cv-cert-item{font-size:.85rem;color:var(--text2);line-height:1.5;}
+    .cv-cert-item strong{display:block;font-weight:700;color:var(--text);font-size:.85rem;}
+
+    .cv-edu{display:flex;flex-direction:column;gap:1rem;}
+    .cv-edu-item{}
+    .cv-edu-item strong{display:block;font-weight:700;color:var(--text);font-size:.88rem;margin-bottom:.1rem;}
+    .cv-edu-item span{font-size:.8rem;color:var(--muted);}
+
+    .cv-lang{display:flex;flex-direction:column;gap:.4rem;}
+    .cv-lang-item{font-size:.88rem;color:var(--text2);}
+    .cv-lang-item strong{font-weight:700;color:var(--text);}
+
+    .cv-contact{display:flex;flex-direction:column;gap:.6rem;}
+    .cv-contact a{font-size:.85rem;color:var(--purple);text-decoration:none;font-weight:600;transition:opacity .2s;}
+    .cv-contact a:hover{opacity:.7;}
+    .cv-contact span{font-size:.85rem;color:var(--text2);}
+
+    footer{border-top:1px solid var(--border);padding:2rem 3rem;max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
+    footer p,footer span{font-size:.75rem;color:var(--muted);}
+
+    @media(max-width:768px){
+      nav{padding:1rem 1.5rem;}
+      .nav-links{gap:1.25rem;}
+      .cv-hero{padding:7rem 1.5rem 3rem;}
+      .cv-wrap{grid-template-columns:1fr;padding:0 1.5rem 4rem;gap:0;}
+      .cv-sidebar{position:static;margin-top:3rem;}
+      footer{flex-direction:column;gap:.5rem;text-align:center;padding:2rem 1.5rem;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="./index.html" class="nav-logo">CM</a>
+  <ul class="nav-links">
+    <li><a href="./index.html#about">About</a></li>
+    <li><a href="./index.html#projects">Projects</a></li>
+    <li><a href="./index.html#skills">Skills</a></li>
+    <li><a href="./index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="cv-hero">
+  <a href="./index.html" class="back-btn">← Back to Portfolio</a>
+  <p class="cv-hero-eyebrow">Resume</p>
+  <h1>Camila Marocchi</h1>
+  <p class="cv-hero-sub">Senior Product Designer with 5+ years turning complex workflows into intuitive, scalable digital products. My path from Gaming, Pharma and Banking gives me a rare cross-industry lens on trust, engagement, and clarity.</p>
+</div>
+
+<div class="cv-wrap">
+
+  <!-- LEFT: EXPERIENCE -->
+  <div>
+    <div class="cv-section">
+      <p class="cv-sec-label">Experience</p>
+
+      <div class="cv-job">
+        <div class="cv-job-header">
+          <span class="cv-job-title">Senior UXUI Designer <span class="cv-current-badge">Current</span></span>
+          <span class="cv-job-period">Feb 2026 — Present</span>
+        </div>
+        <p class="cv-job-company">Banreservas · Globant</p>
+        <p class="cv-job-industry">Fintech / Banking · Dominican Republic</p>
+        <p class="cv-job-desc">Full modernization of Banreservas mobile app — the largest state-owned bank in the DR, serving 3M+ customers. Strategic migration from legacy platform to React Native, designed for Open Banking readiness.</p>
+        <ul class="cv-job-bullets">
+          <li>Own UX copy refinement across all flows (no UX Writer on team) — ensuring clarity and compliance</li>
+          <li>Build, document and maintain the Design System in Confluence — all states, behaviors, and guidelines</li>
+          <li>Translate UX analysis into high-fidelity screens and interactive prototypes end-to-end</li>
+          <li>Collaborate directly with engineering for pixel-perfect, dev-ready handoffs</li>
+        </ul>
+      </div>
+
+      <div class="cv-job">
+        <div class="cv-job-header">
+          <span class="cv-job-title">Senior Visual Designer</span>
+          <span class="cv-job-period">Feb 2023 — Feb 2026</span>
+        </div>
+        <p class="cv-job-company">BAC Credomatic · Globant</p>
+        <p class="cv-job-industry">Fintech / Banking · Central America</p>
+        <p class="cv-job-desc">End-to-end redesign of BAC Credomatic mobile banking app — one of Central America's largest networks, 4M+ users across 6 countries. Joined at 20 team members, scaled to 150+.</p>
+        <ul class="cv-job-bullets">
+          <li>Designed and maintained a Design System ensuring visual consistency across a multi-team org</li>
+          <li>Owned critical flows: Login, Biometric Auth, Enrollment, Password Recovery, Notifications</li>
+          <li>Applied Defensive Design to simplify high-stakes financial interactions — turning complexity into clarity</li>
+          <li>Collaborated with stakeholders and engineering to balance constraints with top-tier UX</li>
+          <li>Performed visual QA to ensure pixel-perfect dev implementation</li>
+        </ul>
+      </div>
+
+      <div class="cv-job">
+        <div class="cv-job-header">
+          <span class="cv-job-title">SSr Product Designer</span>
+          <span class="cv-job-period">Jun 2023 — Jan 2024</span>
+        </div>
+        <p class="cv-job-company">Imagine Learning · Globant</p>
+        <p class="cv-job-industry">EdTech / B2B SaaS</p>
+        <p class="cv-job-desc">Desktop-first enterprise UX for Cosmos — an internal CMS managing K-12 educational content at scale.</p>
+        <ul class="cv-job-bullets">
+          <li>Conducted user flow analysis to reduce friction in content publishing for power users</li>
+          <li>Designed dashboard modules optimized for long working sessions and high information density</li>
+          <li>Participated in iterative design cycles and stakeholder reviews</li>
+        </ul>
+      </div>
+
+      <div class="cv-job">
+        <div class="cv-job-header">
+          <span class="cv-job-title">SSr UXUI Designer</span>
+          <span class="cv-job-period">Mar 2021 — Jun 2023</span>
+        </div>
+        <p class="cv-job-company">Wellness App · Globant</p>
+        <p class="cv-job-industry">Pharma & Wellness</p>
+        <p class="cv-job-desc">White-label wellness platform developed in partnership with Apple — rewarding healthy habits for corporate clients and telecom partners internationally.</p>
+        <ul class="cv-job-bullets">
+          <li>Designed gamification flows and data visualization dashboards to drive retention and engagement</li>
+          <li>Led RTL (Arabic) visual adaptation for Omantel (Oman) — restructuring IA, iconography, and navigation</li>
+          <li>Built and maintained style guides and UI docs across a configurable, multi-client product</li>
+          <li>Supported end-to-end: UX discovery through high-fidelity UI, prototyping and documentation</li>
+        </ul>
+      </div>
+
+      <div class="cv-job">
+        <div class="cv-job-header">
+          <span class="cv-job-title">Jr Product Designer</span>
+          <span class="cv-job-period">Feb 2020 — Mar 2021</span>
+        </div>
+        <p class="cv-job-company">Todosgamers</p>
+        <p class="cv-job-industry">Gaming / Esports</p>
+        <p class="cv-job-desc">A competitive esports platform and community for Latin American gamers — organizing online tournaments, leagues, and events with 16,000+ players across the region.</p>
+        <ul class="cv-job-bullets">
+          <li>UI design for web and mobile — landing pages, dashboards, digital campaigns</li>
+          <li>Conducted user interviews; applied early gamification principles to engagement design</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RIGHT: SIDEBAR -->
+  <div class="cv-sidebar">
+
+    <div class="cv-sidebar-block">
+      <p class="cv-sidebar-label">Contact</p>
+      <div class="cv-contact">
+        <span>Buenos Aires, Argentina</span>
+        <a href="mailto:marocchicamila@gmail.com">marocchicamila@gmail.com</a>
+        <a href="https://www.linkedin.com/in/camila-marocchi-662a76325/" target="_blank" rel="noopener">LinkedIn Profile</a>
+        <a href="https://www.behance.net/camiluxui" target="_blank" rel="noopener">Behance Portfolio</a>
+      </div>
+    </div>
+
+    <div class="cv-sidebar-block">
+      <p class="cv-sidebar-label">Skills</p>
+      <div class="cv-skills">
+        <span class="cv-skill">Figma · Prototyping · Adobe</span>
+        <span class="cv-skill">Design Systems</span>
+        <span class="cv-skill">UX Research & User Flows</span>
+        <span class="cv-skill">Accessibility (WCAG / Stark)</span>
+        <span class="cv-skill">Gamification & RTL Design</span>
+        <span class="cv-skill">AI-augmented UX</span>
+        <span class="cv-skill">Confluence · Agile</span>
+      </div>
+    </div>
+
+    <div class="cv-sidebar-block">
+      <p class="cv-sidebar-label">Industries</p>
+      <div class="cv-industries">
+        <span class="cv-industry">Fintech / Banking</span>
+        <span class="cv-industry">HealthTech / Pharma</span>
+        <span class="cv-industry">EdTech / B2B SaaS</span>
+      </div>
+    </div>
+
+    <div class="cv-sidebar-block">
+      <p class="cv-sidebar-label">Languages</p>
+      <div class="cv-lang">
+        <span class="cv-lang-item"><strong>Spanish</strong> — Native</span>
+        <span class="cv-lang-item"><strong>English</strong> — Professional</span>
+      </div>
+    </div>
+
+    <div class="cv-sidebar-block">
+      <p class="cv-sidebar-label">Certifications</p>
+      <div class="cv-cert">
+        <div class="cv-cert-item"><strong>AI for Designers</strong>IxDF</div>
+        <div class="cv-cert-item"><strong>Claude 101</strong>Anthropic</div>
+        <div class="cv-cert-item"><strong>Gamification & Octalysis</strong>Framework</div>
+        <div class="cv-cert-item"><strong>UX: The Beginner's Guide</strong>IxDF</div>
+      </div>
+    </div>
+
+    <div class="cv-sidebar-block">
+      <p class="cv-sidebar-label">Education</p>
+      <div class="cv-edu">
+        <div class="cv-edu-item">
+          <strong>Postgraduate in UX Research</strong>
+          <span>Universidad de Belgrano, 2020</span>
+        </div>
+        <div class="cv-edu-item">
+          <strong>UX/UI Design Certificate</strong>
+          <span>Acámica / Coderhouse, 2019</span>
+        </div>
+        <div class="cv-edu-item">
+          <strong>Graphic Design Degree</strong>
+          <span>Universidad de Palermo, 2013</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>Camila Marocchi</p>
+  <span>© 2026 — Buenos Aires, Argentina</span>
+</footer>
+
+</body>
+</html>

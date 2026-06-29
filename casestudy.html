@@ -110,6 +110,7 @@
     <li><a href="./index.html#projects">Projects</a></li>
     <li><a href="./index.html#skills">Skills</a></li>
     <li><a href="./index.html#contact">Contact</a></li>
+    <li><a href="./cv.html">CV</a></li>
   </ul>
 </nav>
 
@@ -189,10 +190,35 @@
 </div>
 
 <div class="cs-section">
-  <p class="cs-sec-label">Tools &amp; process</p>
+  <p class="cs-sec-label">Design Process</p>
   <h2>AI as a strategic co-pilot, not just a design tool.</h2>
-  <p>AI was used throughout as a strategic thinking partner — not just for asset generation, but for stress-testing product decisions, UX writing, and business viability. Every major decision was pressure-tested against real user scenarios before a single screen was designed.</p>
-  <div class="cs-tools">
+  <p>I didn't use AI to generate ideas — I used it to pressure-test mine. Every major decision in OpenShelf started with my own hypothesis. Claude helped me stress-test it, catch blind spots, and move faster once direction was clear.</p>
+
+  <div class="g2" style="margin-top:2rem;">
+
+    <div class="cs-dec">
+      <p class="cs-dec-t">1 — Product pivot · Catching my own wrong user</p>
+      <p>While updating a slide, I realized school books in Argentina aren't imported — they're local. The pain point I'd built around international shipping didn't apply to my actual user. I mentioned it: <em>"los libros escolares se compran en argentina, no se piden afuera."</em> Claude confirmed it was a significant error — I was mixing two distinct users with two distinct problems. That single correction reframed the entire product from a general book marketplace to a school-centered exchange.</p>
+    </div>
+
+    <div class="cs-dec">
+      <p class="cs-dec-t">2 — Scope control · Cutting the school dashboard</p>
+      <p>Claude had proposed a coverage dashboard for schools: "28 of 45 books for 4th grade are available." It sounded useful. But I pushed back: <em>"Para qué le sirve ver los disponibles en el mercado AL COLEGIO?"</em> The school's job is to upload a booklist and send one email per year — that's it. The availability problem belongs to parents, not institutions. Claude acknowledged the scope creep immediately and we simplified the school role to three steps.</p>
+    </div>
+
+    <div class="cs-dec">
+      <p class="cs-dec-t">3 — UX flow · Designing the onboarding with no friction</p>
+      <p>I mapped the user journey step by step in conversation, questioning each moment of friction out loud. I caught that one QR per grade was operationally impossible for a school secretary — and proposed a single QR per school instead, with grade selection happening inside the app. I also suggested replacing passwords with DNI authentication. Claude refined the logic, confirmed which steps held up, and flagged the ones that didn't.</p>
+    </div>
+
+    <div class="cs-dec">
+      <p class="cs-dec-t">4 — UI decision · Solving pricing display on the card</p>
+      <p>I identified that showing a single price on a book card was misleading when multiple sellers offered different prices. I proposed <em>"Desde $x.00"</em> as the solution. Claude validated it as an established pattern used by platforms like Airbnb and Booking, and structured how it would cascade into the detail view — all sellers, their individual prices, and Vellum scores visible on tap.</p>
+    </div>
+
+  </div>
+
+  <div class="cs-tools" style="margin-top:2rem;">
     <span class="cs-tool">Figma</span>
     <span class="cs-tool">Stitch</span>
     <span class="cs-tool">Claude</span>
